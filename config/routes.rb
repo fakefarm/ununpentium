@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'crumbs#index'
   resources :crumbs
   resources :quests
   devise_for :users

@@ -8,11 +8,17 @@
 </head>
 <body>
 
+<div class="wrapper">
+  <div class="logo">
+    ununpentium
+  </div>
+  <br>
   <% flash.each do |type, msg| %>
-    <%= content_tag :p, msg, class: type %>
+  <%= content_tag :p, msg, class: type %>
   <% end %>
 
-<%= yield %>
+  <%= yield %>
+</div>
 
 </body>
 </html>

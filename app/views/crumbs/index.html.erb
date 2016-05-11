@@ -12,20 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :url %><br>
     <%= f.text_field :url, autofocus: true %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
   </div>
 <% end %>
 
 
 <p id="notice"><%= notice %></p>
 
-
-<% @crumbs.each do |crumb|  %>
-  <div class="crumb">
-    <%= link_to crumb.url %> | <%= link_to 'review' -%>
-  </div>
-<% end %>
+<div class="crumbs">
+  <% @crumbs.each do |crumb|  %>
+  <article class="crumb">
+    <div class="link">
+      <%= link_to crumb.url, crumb.url, target: '_blank' %>
+    </div>
+    <div class="info">
+      <span class="created">
+        <%= crumb.created_at.strftime("%h %e") %>
+      </span>
+      <span class='delete'>
+        <%= link_to 'Destroy', crumb, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </span>
+    </div>
+  </article>
+  <% end %>
+</div>
