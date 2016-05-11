@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @crumb.url %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @crumb.user %>
+</p>
+
+<%= link_to 'Edit', edit_crumb_path(@crumb) %> |
+<%= link_to 'Back', crumbs_path %>

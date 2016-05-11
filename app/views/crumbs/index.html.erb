@@ -1,0 +1,31 @@
+<%= form_for(@crumb) do |f| %>
+  <% if @crumb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@crumb.errors.count, "error") %> prohibited this crumb from being saved:</h2>
+
+      <ul>
+      <% @crumb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url, autofocus: true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<p id="notice"><%= notice %></p>
+
+
+<% @crumbs.each do |crumb|  %>
+  <div class="crumb">
+    <%= link_to crumb.url %> | <%= link_to 'review' -%>
+  </div>
+<% end %>
